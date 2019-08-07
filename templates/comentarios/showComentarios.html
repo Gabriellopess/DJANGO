@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Blog | Usuários {% endblock title %} {% block scripts %} {% endblock scripts %} {% block body %} {% for c in comentarios %}
+
+    <h4>{{c.post}}</h4>
+    <br>
+    <h2>{{c.comentario}}</h2>
+
+    <a href="{% url 'comentarios:update_comentarios' c.id %}"> editar comentario </a>
+    <br>
+    <a href="{% url 'comentarios:delete_comentarios' c.id %}"> deletar comentario</a>
+
+{% empty %}
+<p>No comments have been detected.</p>
+<a href="{% url 'comentarios:createComentarios'%}">Clique para adicionar um comentario</a> {% endfor %} {% endblock body %}
+
+</body>
+
+</html>

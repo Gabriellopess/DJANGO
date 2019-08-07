@@ -24,5 +24,6 @@ urlpatterns = [
     path('',include('core.urls')),
     path('',include('posts.urls')),
     path('',include('categoria.urls')),
+    path('',include('comentarios.urls')),
     
 ]
