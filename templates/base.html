@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title> {% block title %}{% endblock title %} </title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}"> {% block style %} {% endblock style %}
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="menu">
+            <ul>
+                <li><a href="{% url 'core:index' %}">Home</a></li>
+                <li><a href="{% url 'users:list_users' %}">Lista</a></li>
+                <li><a href="{% url 'posts:showPosts' %}">Posts</a></li>
+                <li><a href="{% url 'posts:createPosts_posts' %}">Novo Post</a></li>
+                <!-- <li><a href=" url 'categoria:createcategory' ">Criar Categoria</a></li> -->
+            </ul>
+        </div>
+    </nav>
+
+    {% block body %} {% endblock body %}
+
+</body>
+
+</html>

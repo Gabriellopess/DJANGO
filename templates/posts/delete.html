@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Delete {% endblock title %} {% block scripts %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock scripts %} {% block body %}
+
+<h2>Delete Post</h2>
+<form method="post">
+    {% csrf_token %} {{form.as_p}} Are you sure you want to delete this? <br> {{post.texto}}
+    <br>
+    <input type="submit" value="Delete">
+</form>
+{% endblock body %}

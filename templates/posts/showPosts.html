@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Blog | Usuários {% endblock title %} {% block scripts %} {% endblock scripts %} {% block body %} {% for u in posts %}
+<div class="comentario">
+
+    <h4>{{u.autor}}</h4>
+    <br>
+    <h2>{{u.categoria}}</h2>
+    <h2>{{u.texto}}</h2>
+    <br>
+    <h4>{{u.created_at}}</h4>
+
+    <a href="{% url 'posts:update_post' u.id %}"> alterar post </a>
+    <a href="{% url 'posts:delete_post' u.id %}"> deletar post</a>
+
+</div>
+
+{% empty %}
+<p>You don't have posts...</p>
+<a href="{% url 'posts:createPosts_posts'%}">Clique para adicionar um Post</a> {% endfor %} {% endblock body %}
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+.navbar {
+    border: 1px solid black;
+    background-color: rgb(4, 0, 255);
+}
+
+.menu {
+    width: 50%;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li a {
+    color: black;
+}
+
+.menu ul li a:hover {
+    color: rgb(226, 43, 43);
+}
+
+.comentario {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 5%;
+    border: 3px solid black;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% load static %} {% block title %} Edit {% endblock title %} {% block scripts %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock scripts %} {% block body %}
+
+<h2>Update Post</h2>
+<form method="post">
+    {% csrf_token %} {{form.as_p}}
+    <input type="submit" value="Update">
+</form>
+{% endblock body %}

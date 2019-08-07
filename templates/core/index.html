@@ -1,0 +1,13 @@
+ {% extends 'base.html' %} {% load static %} {% block title %} New Posts {% endblock title %} {% block scripts %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<link rel="stylesheet" href="{% static 'css/index.css' %}"> {% endblock scripts %} {% block style %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}"> {% endblock style %} {% block body %}
+<div class="geral">
+    <p>
+        <h1 class="oi">{{hello}}</h1>
+        <h2 class="oi">{{compliments}}</h2>
+    </p>
+</div>
+{% endblock body %}
