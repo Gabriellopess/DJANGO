@@ -26,7 +26,7 @@ class PostCreateView(CreateView):
 
 class PostUpdateView(UpdateView):
     model = post
-    fields = {'autor','texto'}
+    fields = {'autor','texto', 'categoria'}
     template_name = 'posts/list.html'
     success_url = reverse_lazy('posts:showPosts')
 

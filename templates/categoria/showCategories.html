@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block title %} 
+Categorias
+{% endblock title %} 
+
+{% block scripts %} 
+{% endblock scripts %} 
+
+{% block body %} 
+
+{% for u in categoria %}
+
+    
+    <h2>{{u.categoria}}</a></h2>
+    
+    <a href="{% url 'categoria:update_category' u.id %}"> alterar categoria </a>
+    <a href="{% url 'categoria:deleteCategories' u.id %}"> deletar categoria </a>
+    <!-- url 'categoria:delete' u.id -->
+
+
+
+{% empty %}
+<p>You don't have categories...</p>
+<a href="{% url 'categoria:createcategory'%}">Clique para adicionar um Post</a> {% endfor %} {% endblock body %}
+
+</body>
+
+</html>

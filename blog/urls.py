@@ -23,5 +23,6 @@ urlpatterns = [
     path('',include('users.urls')),
     path('',include('core.urls')),
     path('',include('posts.urls')),
+    path('',include('categoria.urls')),
     
 ]
