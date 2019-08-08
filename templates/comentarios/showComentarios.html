@@ -1,12 +1,17 @@
 {% extends 'base.html' %} {% load static %} {% block title %} Blog | Usuários {% endblock title %} {% block scripts %} {% endblock scripts %} {% block body %} {% for c in comentarios %}
-
-    <h4>{{c.post}}</h4>
-    <br>
+<div class="comments">
+    <center>
     <h2>{{c.comentario}}</h2>
-
-    <a href="{% url 'comentarios:update_comentarios' c.id %}"> editar comentario </a>
     <br>
-    <a href="{% url 'comentarios:delete_comentarios' c.id %}"> deletar comentario</a>
+    <h4>{{c.post}}</h4>
+
+    <div class="btn-group btn-group-xs">
+        <a href="{% url 'comentarios:update_comentarios' c.id %}"  class="btn btn-primary"> editar comentario </a>
+        <br>
+        <button type="button" class="btn btn-outline-danger"><a href="{% url 'comentarios:delete_comentarios' c.id %}"> deletar comentario </a></button>
+    </div>
+    </center>
+</div>
 
 {% empty %}
 <p>No comments have been detected.</p>

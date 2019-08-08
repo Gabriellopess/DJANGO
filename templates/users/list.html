@@ -1,29 +1,23 @@
-{% extends 'base.html' %} {% load static %} {% block title %} Blog | Usuários {% endblock title %} {% block scripts %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock scripts %} {% block body %} {% for u in users %}
-<p> {{u.username}} </p>
-<!-- <p> {{u.categoria}}</p> -->
-<p> {{u.email}} </p>
-{% endfor %} {% endblock body %}
+{% extends 'base.html' %} 
+{% load static %} 
 
+{% block title %} 
+Blog | Usuários 
+{% endblock title %} 
 
-<!DOCTYPE html>
-<html lang="en">
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+{% endblock scripts %} 
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Users</title>
-</head>
+{% block body %} 
 
-<body>
+{% for u in users %}
+<div class= "list">
+<center>
+<p>{{u.username}}</p>
+{{u.email}}
+</center>
+</div>
+{% endfor %} 
 
-    {% for u in users %}
-    <p> {{u.username}} </p>
-    <!-- <p> {{u.categoria}}</p> -->
-    <p> {{u.email}} </p>
-    {% endfor %}
-
-</body>
-
-</html>
+{% endblock body %}

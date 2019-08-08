@@ -25,12 +25,66 @@
 }
 
 .comentario {
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-bottom: 5%;
-    border: 3px solid black;
+    margin-left: 25%;
+    margin-top: 2%;
+    margin-right: 25%;
+    margin-bottom: 3%;
+    border: 5px double black;
     background-color: aqua;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.comentario h2 a:hover {
+    color: rgb(226, 43, 43);
+}
+
+.categorias {
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 4%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-group btn-group-xs {
+    display: flex;
+    justify-items: center !important;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: flex-end;
+}
+
+body {
+    color:white !important;
+    background-image: url("http://www.flyshopbrasil.com.br/wp-content/uploads/2015/12/0138-Morice-09052015Aerial.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.geral {
+    color: blue !important;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.list{
+    color: blue !important;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 4%;
+    border: 3px solid white;
+    justify-content: center;
+}
+
+.comments {
+    color: black !important;
+    border: 3px dashed white;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 4%;
 }

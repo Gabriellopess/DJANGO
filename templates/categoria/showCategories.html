@@ -12,18 +12,22 @@ Categorias
 
 {% for u in categoria %}
 
-    
-    <h2>{{u.categoria}}</a></h2>
-    
-    <a href="{% url 'categoria:update_category' u.id %}"> alterar categoria </a>
-    <a href="{% url 'categoria:deleteCategories' u.id %}"> deletar categoria </a>
-    <!-- url 'categoria:delete' u.id -->
+<div class = "categorias">
+    <center>
+    <h2>{{u.categoria}}</h2>
 
-
+    <div class="btn-group btn-group-xs">
+    <a href="{% url 'categoria:update_category' u.id%}"  class="btn btn-primary"><br>alterar categoria </a>
+    <button type="button" class="btn btn-outline-danger"><a href="{% url 'categoria:deleteCategories' u.id%}"><br>deletar categoria </a></button>
+    </div>
+    </center>
+</div>
 
 {% empty %}
-<p>You don't have categories...</p>
-<a href="{% url 'categoria:createcategory'%}">Clique para adicionar um Post</a> {% endfor %} {% endblock body %}
+<p><h2>You don't have categories...</h2></p>
+<a href="{% url url 'categoria:createcategory' %}"  class="btn btn-primary"><br> Clique para adicionar um Post </a>
+{% endfor %} 
+{% endblock body %} 
 
 </body>
 

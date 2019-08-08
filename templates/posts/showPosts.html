@@ -8,20 +8,12 @@
     <br>
     <h4>{{u.created_at}}</h4>
 
-    <a href="{% url 'posts:update_post' u.id %}"> alterar post </a>
-    <a href="{% url 'posts:delete_post' u.id %}"> deletar post</a>
+    <div class="btn-group btn-group-xs">
+        <a href="{% url 'posts:update_post' u.id%}"  class="btn btn-primary"> alterar post</a>
+        <button type="button" class="btn btn-outline-danger"><a href="{% url 'posts:delete_post' u.id%}"> deletar post</a></button>
+    </div>
+    
 </div>
-
-<!-- {% for c in comentarios %}
-
-<h2>{{c.comentario}}</h2>
-<a href="{% url 'comentarios:update_comentarios' c.id %}"> editar comentario </a>
-<a href="{% url 'comentarios:delete_comentarios' c.id %}"> deletar comentario</a>
-
-{% empty %}
-<p>No comments have been detected.</p>
-<a href="{% url 'comentarios:createComentarios'%}">Clique para adicionar um comentario</a> 
-{% endfor %} -->
 
 {% empty %}
 <p>You don't have posts...</p>
