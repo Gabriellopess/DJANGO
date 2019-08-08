@@ -62,7 +62,7 @@
 body {
     color:white !important;
     background-image: url("http://www.flyshopbrasil.com.br/wp-content/uploads/2015/12/0138-Morice-09052015Aerial.jpg");
-    background-repeat: no-repeat;
+    height: 100vh;
     background-size: 100%;
 }
 

@@ -8,6 +8,7 @@ from django.views import generic
 
 from posts.forms import PostCreateForm
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
@@ -17,20 +18,20 @@ class PostListView(ListView):
     template_name = 'posts/showPosts.html'
     ordering = ['-created_at',]
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = post
     template_name = 'posts/createposts.html'
     form_class = PostCreateForm
     success_url =  reverse_lazy('posts:showPosts') #used for user pages redirection from CreatePosts to showPosts.
 
 
-class PostUpdateView(UpdateView):
+class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = post
     fields = {'autor','texto', 'categoria'}
     template_name = 'posts/list.html'
     success_url = reverse_lazy('posts:showPosts')
 
-class PostDeleteView(DeleteView):
+class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = post
     context_object_name = 'post'
     template_name = 'posts/delete.html'

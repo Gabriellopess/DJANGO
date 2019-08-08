@@ -1,10 +1,17 @@
-{% extends 'base.html' %} {% load static %} {% block title %} New Posts {% endblock title %} {% block scripts %}
+{% extends 'base.html' %} 
+{% load static %}
+{% load widget_tweaks %}{% block title %} New Posts {% endblock title %} {% block scripts %}
 <link rel="stylesheet" href="{% static 'css/style.css' %}"> {% endblock scripts %} {% block body %}
 
 <h2>NOVOS POSTS</h2>
 
 <form method="post">
-    {% csrf_token %} {{form.as_p}}
+    {% csrf_token %} 
+    {% with WIDGET_ERROR_CLASS='my_error' WIDGET_REQUIRED_CLASS='my_required' %}
+    <p> Autor: {% render_field form.autor %}</p>
+    <p> Texto: {% render_field form.texto %}</p>
+    <p> Categoria: {% render_field form.categoria %}</p>
+    {% endwith %}
     <input type="submit" value="Enviar">
 </form>
 
